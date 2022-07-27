@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<meta charset='utf-8' />
+    <head>
+        <title>FirstDisplay</title>
+        <link rel="stylesheet" href="../css/logIn.css">
+        <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+        <script src="http://code.jquery.com/jquery-3.5.0.js"></script>
+    </head>
+    <body>
+        <div class="wrap">
+            <div class="form-wrap">
+                <div class="title">ON PLANNER</div>
+                <div class="button-wrap">
+                    <div id="btn"></div>
+                    <button type="button" class="bannerbtn" onclick="loginAni()">LOG IN</button>
+                    <button type="button" class="bannerbtn" onclick="registerAni()">REGISTER</button>
+                </div>
+                <form id="login" action="" class="input-group">
+                    <input type="email" class="input-field" placeholder="사용자 이름 또는 아이디" id="logId" required>
+                    <input type="password" class="input-field" placeholder="비밀번호" id="logPassword" required>
+                    <button class="submit_log" id="login" >로그인</button>
+                </form>
+                <form id="register" action="" class="input-group">
+                    <input type="email" class="input-field" placeholder="ID" id="signId" required>
+                    <input type="password" class="input-field" placeholder="비밀번호" id="signPassword" required>
+                    <input type="password" class="input-field" placeholder="비밀번호 확인" id="signPasswordCheck" required>
+                    <button id="submit_sign" onclick="register1()">회원가입</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+        <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+
+        <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+        <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-analytics.js"></script>
+
+        <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase.js"></script>
+        <!-- Add Firebase products that you want to use -->
+<script src="../js/logIn.js"></script>
+    </body>
+</html> 

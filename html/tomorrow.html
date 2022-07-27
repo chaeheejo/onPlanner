@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+        <link rel="stylesheet" type="text/css" href="../css/daily.css">
+        <title>Daily</title>
+        <link rel="stylesheet" type="text/css" href="../css/todolist.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      rel="stylesheet">
+    <link rel="stylesheet" type = "text/css" href="../css/todolist2.css">
+        <script langauge="javascript">
+                 function change(color) {
+                document.getElementById("table1 tr").style.backgroundColor = color;
+            }
+
+                function gettomorrow(){
+                    var d = new Date();
+                    var changeDate = new Date();
+                    var week=new Array('일','월', '화', '수', '목','금','토');
+                    var date = d.getFullYear()+"년"+(d.getMonth()+1)+"월"+(d.getDate()+1) + "일" + week[changeDate.getDay()+1]+ "요일";
+                    document.write(date);
+                }
+        </script>
+        <script language="JavaScript">
+            var now = new Date();
+            var then = new Date("december 25,2020"); // 크리스마스 
+            var gap = then.getTime() - now.getTime();
+            gap = Math.floor(gap / (1000 * 60 * 60 * 24)-1);
+            </script>
+    </head>
+    <style>
+        input:focus, textarea:focus{outline: none;}
+        h2, h5 {display:inline-block; margin: 0px;}
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        
+        .로그off {display: inline-block;
+            background-color: cornflowerblue;
+            height: 25px; 
+            background-color: gray;
+            margin-left: 10px;
+            padding: 3px;
+            }
+        .MONTHLY { display: inline-block;
+            height: 25px; 
+                    background-color: rgb(158, 181, 223);
+                    text-align: center;
+                    margin-left: 430px;
+                    font-size: 20px;
+                    padding: 3px;
+                }
+        .DAILY {display: inline-block;
+            height: 25px; 
+                top:10px;
+                background-color: rgb(88, 123, 189);
+                text-align: center;
+                    font-size: 20px;
+                    padding: 3px;
+                }
+        #강의 { display: inline-block;
+                width: 150;
+                height: 15;
+                background-color: gray;
+                text-align: center;
+                }
+        #강의링크{display: inline-block;}
+        #date, #DDAY, #save{
+            margin-left: 150px;
+            display: inline-block;
+        }
+        
+
+    </style>
+    <body>
+ 
+        <header style="margin-top: 10%; margin-left: 10%;">
+            <h2 style="margin: 10px; font-size: 40px;">ON PLANNER</h2>
+            <div class="로그off"><a href="#">로그 OFF</a></div>
+            <div class="MONTHLY"><a href="#">MONTHLY</a></div>
+            <div class="DAILY"><a href="today.html">DAILY</a></div>
+        </header>
+        <hr color="black" style="margin-left: 10%; margin-right: 20%;">
+        <nav style="margin-left: 10%;">
+            <script type="text/javascript" src="../js/link.js"></script>
+            <button onclick = "golink();" style="background-color: gray;">강의 들으러 가기</button>
+           
+            <div id="강의링크">
+                <a href="#" onclick="writelink();">
+                <i class="fas fa-cog"></i>
+                </a>
+            </div>
+            
+            <!--스톱워치-->
+            <br>
+            <br>
+            <script type="text/javascript" src="../js/timer.js"></script>
+            <div id="timerBox" style="background-color: rgb(179, 168, 168);"><br>
+            <div id="output" class="time" style="background-color: white; width: 230px; height:25px; margin-left: 30px;">0:00:00:00</div><br>
+
+
+            <button id="start" onclick="start()">START</button>
+            <button id="stop" onclick="stop()">STOP</button><br><br>
+            </div>
+
+
+            <h3>오늘의 일정</h3>
+            <script type="text/javascript" src="../js/getschedule_today.js"></script>
+            
+
+
+        </nav>
+        <section>
+            <div style="display: inline-block; margin-left: 50px;"><i class="fas fa-arrow-circle-left"></i></div>
+            <div id="date" style="margin-left: 100px;"><script>gettomorrow();</script></div>
+            <div style="display: inline-block; margin-left: 100px;"><i class="fas fa-arrow-circle-right"></i></div>
+            <div id="DDAY" style="margin-left: 170px;"><script> document.write("D-" + gap + "크리스마스");</script></div>
+            <div id="writetime" style="margin-left: 170px;">누적학습시간</div>
+
+            <br>
+            <div style="display: inline-block;">
+                <i class="fas fa-check"></i>
+            </div>
+            <h5>To-Do List</h5>
+            <div id="todolist">
+                <div class="input__section">
+                    <form>
+                        <div>
+                            <input type = "text" class = "item" autofocus="true">
+                        </div>
+                        <div>
+                            <button type = "button" class="input__button"><i class="fas fa-plus-circle"></i></button>
+                        </div>
+                    </form>
+                </div>
+            
+                <div class="item__list"></div>
+            
+            </div>
+            
+                <script src="../js/todolist.js" defer></script>        
+                <br>
+                <div style="margin-top: 130px;"><input id="save" type="button" value="SAVE" onclick="alert('저장되었습니다.')"></button></div>
+            
+        </section>
+    </body>
+</html>

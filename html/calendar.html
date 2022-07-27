@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+    <link rel="stylesheet" href="../css/calendar.css">
+    <script src="http://code.jquery.com/jquery-3.5.0.js"></script>
+</head>
+<body>
+    <div class="calendar">
+        <button class="daily" onclick="goDaily()"></a>DAILY</button>
+        <div class="header">
+            <div class="year-month"></div>
+            <div class="today"></div>
+            <div class="nav">
+                <button class="nav-btn go-prev" onclick="prevMonth()">&lt;</button>
+                <button class="nav-btn go-today" onclick="goToday()">Today</button>
+                <button class="nav-btn go-next" onclick="nextMonth()">&gt;</button>
+            </div>
+        </div>
+        <div class="main">
+            <div class="days">
+                <div class="day">일</div>
+                <div class="day">월</div>
+                <div class="day">화</div>
+                <div class="day">수</div>
+                <div class="day">목</div>
+                <div class="day">금</div>
+                <div class="day">토</div>
+            </div>
+            <div class="dates"></div>
+        </div>
+    </div>
+    <div class="todo">
+        <div class="dateDisplay"></div>
+        <div class="todo-title">오늘의 할 일</div>
+        <div class="input-wrap">
+        <input type="text" placeholder="일정을 입력해주세요" id="input-box" class="input-box">
+        <button type="button" id="input-data" >입력</button>
+        </div>
+    </div>
+    <script src="../js/calendar.js"></script>
+</body>
+</html>
